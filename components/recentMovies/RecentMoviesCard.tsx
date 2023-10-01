@@ -15,7 +15,7 @@ const RecentMoviesCard = ({ movies, total }: Props) => {
   }
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 px-5 lg:grid-cols-4 lg:px-0 lg:gap-4 w-full">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 px-5 lg:grid-cols-4 lg:px-0 lg:gap-4 w-full">
         {movies.map((movie) => (
           <div key={movie._id}>
             <Link href={`movies/${movie?.slug.current}`}>

@@ -1,4 +1,4 @@
-import { fetchMovies } from '@/app/utils';
+import { fetchPhotos } from '@/app/utils';
 
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -10,7 +10,7 @@ export async function GET(request: NextRequest, response: NextResponse) {
     return;
   }
 
-  const { movies, total } = await fetchMovies(start, end);
+  const { photos, total } = await fetchPhotos(start, end);
 
-  return NextResponse.json({ movies, total }, { status: 200 });
+  return NextResponse.json({ photos, total }, { status: 200 });
 }

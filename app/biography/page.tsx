@@ -5,7 +5,9 @@ const KeanuReevesBiography = () => {
   return (
     <div className="max-w-5xl mx-auto min-h-screen my-20">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-10">Keanu Reeves</h1>
+        <h2 className="text-2xl text-gray-800 lg:text-3xl font-semibold mb-4 text-center lg:text-start">
+          Keanu Reeves
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-5 lg:px-0">
           <div className="text-center">

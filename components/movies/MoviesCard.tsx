@@ -8,7 +8,6 @@ type Props = {
 };
 
 const MoviesCard = ({ movie }: Props) => {
-  console.log(movie);
   return (
     <>
       <Link href={`movies/${movie?.slug.current}`}>
@@ -22,7 +21,7 @@ const MoviesCard = ({ movie }: Props) => {
           <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-neutral-950 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-40"></div>
         </figure>
         <div className="text-sm py-2 font-medium">{movie.title}</div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {movie?.categories?.map((category, index) => (
             <div key={index}>
               <span className="capitalize mb-2 text-sm">{category.title}</span>

@@ -1,17 +1,25 @@
 'use client';
-import { Movie } from '@/typings';
-import MoviesCard from './MoviesCard';
+
 import { useState } from 'react';
+import GalleryPageCard from './GalleryPageCard';
+import { Image as ImageProp } from 'sanity';
+
+type ImageProps = {
+  title: string;
+  imageUrl: ImageProp;
+  _id: string;
+};
 
 type Props = {
-  movies: Movie[];
+  photos: ImageProps[];
   total: number;
 };
 
-const loadMoreSteps = 8;
+const loadMoreSteps = 9;
 
-const Movies = ({ movies, total }: Props) => {
-  const [currentMovies, setCurrentMovies] = useState(movies);
+const GalleryPage = ({ photos, total }: Props) => {
+  console.log(photos);
+  const [currentPhotos, setCurrentPhotos] = useState(photos);
 
   const [loadedAmout, setLoadedAmount] = useState(loadMoreSteps);
 
@@ -21,13 +29,13 @@ const Movies = ({ movies, total }: Props) => {
     try {
       setIsloading(true);
       const data = await fetch(
-        `/api/movies?start=${loadedAmout}&end=${loadedAmout + loadMoreSteps}`,
+        `/api/photos?start=${loadedAmout}&end=${loadedAmout + loadMoreSteps}`,
         {
           cache: 'no-store',
         }
       ).then((response) => response.json());
       setLoadedAmount(loadedAmout + loadMoreSteps);
-      setCurrentMovies([...currentMovies, ...data.movies]);
+      setCurrentPhotos([...currentPhotos, ...data.photos]);
       setIsloading(false);
     } catch (error) {
       console.log(error);
@@ -35,14 +43,14 @@ const Movies = ({ movies, total }: Props) => {
   };
 
   if (total === 0) {
-    return <div> There is no movie</div>;
+    return <div> There is no photo</div>;
   }
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 px-5 lg:grid-cols-4 lg:px-0 lg:gap-4 w-full">
-        {currentMovies?.map((movie) => (
-          <div key={movie._id}>
-            <MoviesCard movie={movie} />
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 px-5 lg:grid-cols-3 lg:px-0 lg:gap-4 w-full">
+        {currentPhotos?.map((photo, _id) => (
+          <div key={_id}>
+            <GalleryPageCard photo={photo} />
           </div>
         ))}
       </div>
@@ -57,4 +65,4 @@ const Movies = ({ movies, total }: Props) => {
   );
 };
 
-export default Movies;
+export default GalleryPage;

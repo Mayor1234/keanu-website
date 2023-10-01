@@ -4,9 +4,9 @@ import Filmography from '@/components/filmographyComponent/Filmography';
 const page = () => {
   return (
     <div className="max-w-5xl mx-auto my-20">
-      <h1 className="text-2xl lg:text-3xl font-semibold mb-4 text-center lg:text-start">
+      <h2 className="text-2xl text-gray-800 lg:text-3xl font-semibold mb-4 text-center lg:text-start">
         Filmography
-      </h1>
+      </h2>
       <div className="leading-8 max-w-3xl px-5 lg:px-0">
         <p className="text-base text-gray-700 pb-5">
           After appearing as a background player in a couple of television shows
