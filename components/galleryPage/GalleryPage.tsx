@@ -18,7 +18,6 @@ type Props = {
 const loadMoreSteps = 9;
 
 const GalleryPage = ({ photos, total }: Props) => {
-  console.log(photos);
   const [currentPhotos, setCurrentPhotos] = useState(photos);
 
   const [loadedAmout, setLoadedAmount] = useState(loadMoreSteps);
