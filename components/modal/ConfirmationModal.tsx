@@ -37,11 +37,11 @@ const ConfirmationModal = ({
     <ReactPortal wrapperId="react-portal-modal-container">
       <>
         <div
-          className="fixed top-0 left-0 z-40 w-screen h-screen p-4"
+          className="fixed top-0 left-0 z-40 bg-neutral-950  w-screen h-screen p-4"
           onClick={handleClose}
         >
           <div
-            className="relative max-w-xl mx-auto z-50 bg-[#f2f2f2] bg-opacity-100 left-0 top-10 w-80 h-96 lg:left-1/2 lg:top-1/2 lg:h-[500px] lg:w-[400px]
+            className="relative max-w-xl mx-auto z-50 bg-white  bg-opacity-100 left-0 top-10 w-72 h-[400px] lg:top-4 lg:h-[500px] lg:w-[400px]
           translate-y-32 min-w-fit rounded-lg p-5 box-border overflow-hidden md:inset-0 max-h-full inset-x-32 inset-y-32"
           >
             {children}
@@ -53,3 +53,5 @@ const ConfirmationModal = ({
 };
 
 export default ConfirmationModal;
+
+// lg:left-1/2 lg:top-1/2

@@ -6,7 +6,7 @@ const KeanuReevesBiography = () => {
     <div className="max-w-5xl mx-auto min-h-screen my-20">
       <div className="container mx-auto">
         <h2 className="text-2xl text-gray-800 lg:text-3xl font-semibold mb-4 text-center lg:text-start">
-          Keanu Reeves
+          Biography
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-5 lg:px-0">
@@ -14,7 +14,7 @@ const KeanuReevesBiography = () => {
             <Image
               src={keanuBio}
               alt="Keanu Reeves"
-              className="mx-auto w-96 h-96 object-cover object-center lg:rounded-md"
+              className="mx-auto w-96 h-96 object-cover object-center rounded-md shadow-md"
             />
           </div>
 

@@ -16,7 +16,9 @@ type ImageProps = {
 
 const GalleryCard = ({ photos }: { photos: ImageProps[] }) => {
   const [confirmationModalOpen, setConfirmationModalOpen] = useState(false);
+
   const [modalImage, setModalImage] = useState<ImageProps>();
+
   const handleClick = (item: ImageProps) => {
     setModalImage(item);
     setConfirmationModalOpen(!confirmationModalOpen);
@@ -37,9 +39,6 @@ const GalleryCard = ({ photos }: { photos: ImageProps[] }) => {
                   className="object-fill h-auto max-w-full  object-center"
                   alt={photo.title}
                   fill
-                  // onClick={() =>
-                  //   setConfirmationModalOpen(!confirmationModalOpen)
-                  // }
                 />
                 <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-neutral-950 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-40"></div>
               </figure>
@@ -51,15 +50,17 @@ const GalleryCard = ({ photos }: { photos: ImageProps[] }) => {
                     setConfirmationModalOpen(!confirmationModalOpen)
                   }
                 >
-                  <Image
-                    src={urlForImage(modalImage?.imageUrl as ImageProp).url()}
-                    className="object-fill h-auto max-w-full  object-center"
-                    alt={photo.title}
-                    fill
-                    // onClick={() =>
-                    //   setConfirmationModalOpen(!confirmationModalOpen)
-                    // }
-                  />
+                  <div>
+                    <p className="text-[#fff] absolute p-2 left-0 bottom-0 z-50 w-full text-center">
+                      {modalImage?.title}
+                    </p>
+                    <Image
+                      src={urlForImage(modalImage?.imageUrl as ImageProp).url()}
+                      className="object-fill h-auto max-w-full object-center"
+                      alt={photo.title}
+                      fill
+                    />
+                  </div>
                 </ConfirmationModal>
               )}
             </div>

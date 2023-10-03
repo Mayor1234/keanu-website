@@ -46,7 +46,7 @@ const GalleryPage = ({ photos, total }: Props) => {
   }
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 px-5 lg:grid-cols-3 lg:px-0 lg:gap-4 w-full">
+      <div className="grid grid-cols-2 gap-4 px-5 md:grid-cols-3 lg:grid-cols-4 w-full lg:gap-4 lg:px-0">
         {currentPhotos?.map((photo, _id) => (
           <div key={_id}>
             <GalleryPageCard photo={photo} />

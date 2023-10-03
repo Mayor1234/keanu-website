@@ -11,7 +11,7 @@ const MoviesCard = ({ movie }: Props) => {
   return (
     <>
       <Link href={`movies/${movie?.slug.current}`}>
-        <figure className="relative z-20 w-auto px-5 md:px-5 h-60 lg:px-0 cursor-pointer rounded-md">
+        <figure className="relative z-20 w-auto px-5 md:px-5 h-60 lg:px-0 cursor-pointer rounded-md overflow-hidden">
           <Image
             src={urlForImage(movie?.mainImage).url()}
             className="object-center object-fill h-auto max-w-full"
