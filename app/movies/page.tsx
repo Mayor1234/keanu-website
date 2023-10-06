@@ -3,6 +3,8 @@ import Loading from '@/components/Loading';
 import Movies from '@/components/movies/Movies';
 import { Suspense } from 'react';
 
+export const revalidate = 60;
+
 const page = async () => {
   const { movies, total } = await fetchMovies(0, 8);
 

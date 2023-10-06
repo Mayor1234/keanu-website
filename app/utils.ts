@@ -5,7 +5,7 @@ import { groq } from 'next-sanity';
 
 export async function fetchMovies(start: number, end: number) {
   const query = groq`{
-      "movies": *[_type=='post'] | order(publishedAt desc)[${start}...${end}]{
+      "movies": *[_type=='post'] | order(_updatedAt desc)[${start}...${end}]{
     ...,
     categories[]->,
   },
@@ -28,7 +28,7 @@ export async function fetchMovies(start: number, end: number) {
 
 export async function fetchRecentMovies() {
   const query = groq`{
-    "movies": *[_type=='post'] | order(publishedAt desc)[0...4]{
+    "movies": *[_type=='post'] | order(_updatedAt desc)[0...4]{
   ...,
   categories[]->,
 },
@@ -51,7 +51,7 @@ export async function fetchRecentMovies() {
 
 export async function fetchPhotos(start: number, end: number) {
   const query = groq`{
-      "photos": *[_type=='photos'] | order(publishedAt desc)[${start}...${end}]{
+      "photos": *[_type=='photos'] | order(_updatedAt desc)[${start}...${end}]{
       title,
       _id,
       "imageUrl": image.asset->url

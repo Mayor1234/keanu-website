@@ -31,6 +31,7 @@ const GalleryPage = ({ photos, total }: Props) => {
         `/api/photos?start=${loadedAmout}&end=${loadedAmout + loadMoreSteps}`,
         {
           cache: 'no-store',
+          next: { revalidate: 60 },
         }
       ).then((response) => response.json());
       setLoadedAmount(loadedAmout + loadMoreSteps);

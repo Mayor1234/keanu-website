@@ -1,5 +1,6 @@
 import FetchPhotos from './FetchPhotos';
 
+export const revalidate = 60;
 export const Gallery = () => {
   return (
     <div className="max-w-5xl mx-auto mb-10">
