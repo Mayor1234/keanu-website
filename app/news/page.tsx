@@ -7,7 +7,7 @@ const page = async () => {
   const { news } = await fetchNews();
 
   return (
-    <div className="max-w-5xl mx-auto my-20">
+    <div className="max-w-5xl mx-auto my-20 px-5 lg:px-0">
       {news.map((item, i) => (
         <NewsPortableText news={item} key={i} />
       ))}
