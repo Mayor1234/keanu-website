@@ -70,3 +70,21 @@ export async function fetchPhotos(start: number, end: number) {
     total,
   };
 }
+
+export async function fetchNews() {
+  const query = groq`{
+    "news": *[_type=='news']{
+  ...,
+},
+
+}`;
+
+  const { news } = await client.fetch(query, {
+    cache: 'no-store',
+    next: { revalidate: 60 },
+  });
+
+  return {
+    news,
+  };
+}

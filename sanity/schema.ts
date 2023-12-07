@@ -6,7 +6,8 @@ import post from './schemas/post';
 import author from './schemas/author';
 import youtube from './schemas/youtube';
 import photo from './schemas/photo';
+import news from './schemas/news';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [post, photo, author, category, blockContent, youtube],
+  types: [post, photo, author, category, blockContent, news, youtube],
 };
